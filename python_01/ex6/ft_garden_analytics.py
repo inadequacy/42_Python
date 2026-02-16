@@ -38,7 +38,6 @@ class PrizeFlower(FloweringPlant):
 
 
 class GardenManager:
-
     total_gardens = 0
 
     class GardenStats:
