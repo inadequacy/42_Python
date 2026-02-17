@@ -19,7 +19,7 @@ def check_temperature(temp_str: str) -> None:
         pass
 
 
-def test_temperature_input():
+def test_temperature_input() -> None:
     print("===\tGarden Temperature Checker\t\t\t===\n")
     check_temperature("25")
     check_temperature("abc")
