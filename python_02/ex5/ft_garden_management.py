@@ -91,8 +91,7 @@ class GardenManager:
             print("Closing watering system (cleanup)")
 
     def expose_to_sun(self, desired_plant: str, hours: int) -> None:
-        """Expose specific plant to sun"""
-        print("=== Opening spot on roof system ===")
+        print("Opening spot on roof system...")
         try:
             plant_found = False
             if hours < 1:
@@ -108,11 +107,10 @@ class GardenManager:
         except (NameError, SunlightError) as e:
             print(f"Error oppening roof: {e}")
         finally:
-            print("=== Closing spot on roof system ===\n")
+            print("Closing spot on roof system (cleanup)\n")
 
     def expose_all_to_sun(self, hours: int) -> None:
-        """Expose all plants to sun"""
-        print("=== Opening general roof system ===")
+        print("Opening general roof system...")
         try:
             if hours < 1:
                 raise SunlightError("Cannot oppen for 0 or negative hours.")
@@ -123,12 +121,10 @@ class GardenManager:
         except SunlightError as e:
             print(f"Error oppening roof: {e}")
         finally:
-            print("=== Closing general roof system ===\n")
+            print("Closing general roof system (cleanup)\n")
 
     def check_plant_health(self, desired_plant: str) -> None:
-        """Validates plant health parameters"""
-
-        print(f"=== Starting plant health check for {desired_plant} ===")
+        print(f"Starting plant health check for {desired_plant}...")
         try:
             plant_found = False
             for plant in self.garden:
@@ -154,7 +150,7 @@ class GardenManager:
         except NameError as e:
             print(f"Error: {e}")
         finally:
-            print("=== Closing specific plant health check ===\n")
+            print("Closing specific plant health check (cleanup)\n")
 
     def check_all_health(self) -> None:
         try:
@@ -188,12 +184,12 @@ class GardenManager:
             print(f"Critical System Error: {e}")
 
         finally:
-            print("=== Garden Health Check Complete ===\n")
+            print("Garden Health Check Complete (cleanup)\n")
 
 
 # Util Wraper
 def test_garden_management() -> None:
-    print("===== Garden Management System =====\n")
+    print("===\tGarden Management System\t===\n")
 
     crop = []
     my_garden = GardenManager(crop)
@@ -221,7 +217,7 @@ def test_garden_management() -> None:
 
     my_garden.check_all_health()
 
-    print("\nGarden management system test complete!")
+    print("Garden management system test complete!")
 
 
 if __name__ == "__main__":
