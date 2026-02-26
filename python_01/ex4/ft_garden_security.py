@@ -30,7 +30,7 @@ class SecurePlant:
         return (self.__age)
 
 
-def ft_plant_factory() -> None:
+def ft_garden_security() -> None:
     print("===\tGarden Security System\t===")
     rose = SecurePlant("rose")
     rose.set_height(25)
@@ -44,4 +44,4 @@ def ft_plant_factory() -> None:
 
 
 if __name__ == "__main__":
-    ft_plant_factory()
+    ft_garden_security()
