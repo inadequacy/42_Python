@@ -18,14 +18,14 @@ def coordinate_system() -> None:
         if argc == 4:
             nbrs = tuple([sys.argv[1], sys.argv[2], sys.argv[3]])
             for i in range(1, 3):
-               int(sys.argv[i])
+                int(sys.argv[i])
     except ValueError:
         print("Error parsing coordinates: "
               f"invalid literal for int() with base 10: '{sys.argv[i]}'")
         print("Error details - Type: ValueError, Args: "
               f"(\"invalid literal for int() with base 10: '{sys.argv[i]}'\")")
         return
-    
+
     coords = f"{nbrs[0]}, {nbrs[1]}, {nbrs[2]}"
     x1: int = 0
     y1: int = 0
@@ -36,10 +36,11 @@ def coordinate_system() -> None:
     dist = math.sqrt((x2 - x1)**2 + (y2 - y1)**2 + (z2 - z1)**2)
     if argc == 4:
         print(f"Position created: ({coords})")
-    else: 
+    else:
         print(f"Parsed position: ({coords})")
     print(f"Distance between (0, 0, 0) and ({coords}): {dist}")
-    
+
 
 if __name__ == "__main__":
     coordinate_system()
+    
