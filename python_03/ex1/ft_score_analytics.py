@@ -15,7 +15,7 @@ def score_analysis() -> None:
         for i in range(1, argc):
             numbers[(i - 1)] = int(sys.argv[i])
     except ValueError:
-        print(f"use numbers idjit. invalid input of '{sys.argv[i]}'")
+        print(f"Use numbers only. Invalid input of '{sys.argv[i]}'")
         return
 
     print(f"Scores processed: {numbers}")
