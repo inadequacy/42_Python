@@ -40,6 +40,5 @@ def coordinate_system() -> None:
     print(f"Distance between (0, 0, 0) and ({coords}): {dist}")
     
 
-
 if __name__ == "__main__":
     coordinate_system()
