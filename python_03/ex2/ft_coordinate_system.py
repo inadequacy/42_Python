@@ -13,11 +13,12 @@ def coordinate_system() -> None:
     nbrs = [0] * 3
     if argc == 2:
         print(f"Parsing coordinates: \"{sys.argv[1]}\"")
-        nbrs = sys.argv[1].split(",", 2)
+        nbrs = tuple(sys.argv[1].split(",", 2))
     try:
         if argc == 4:
+            nbrs = tuple([sys.argv[1], sys.argv[2], sys.argv[3]])
             for i in range(1, 3):
-                nbrs[(i - 1)] = int(sys.argv[i])
+               int(sys.argv[i])
     except ValueError:
         print("Error parsing coordinates: "
               f"invalid literal for int() with base 10: '{sys.argv[i]}'")
