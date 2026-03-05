@@ -43,4 +43,3 @@ def coordinate_system() -> None:
 
 if __name__ == "__main__":
     coordinate_system()
-    
