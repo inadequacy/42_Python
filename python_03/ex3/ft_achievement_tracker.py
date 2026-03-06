@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-
 def achievement_tracker() -> None:
     alice = {'first_kill', 'level_10', 'treasure_hunter', 'speed_demon'}
     bob = {'first_kill', 'level_10', 'boss_slayer', 'collector'}
@@ -13,7 +12,7 @@ def achievement_tracker() -> None:
     for n in players:
         print(f"Player {player_names[i]} achievements {n}")
         i += 1
-    print("\n===\tAchievement Analytics\t===\n")
+    print("\n===\tAchievement Analytics\t===")
     unique = alice.union(bob, charlie)
     common = alice.intersection(bob, charlie)
     alice_unique = alice - (bob | charlie)
