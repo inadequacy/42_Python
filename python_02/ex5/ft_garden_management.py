@@ -55,9 +55,7 @@ class GardenManager:
             except AddPlantError as e:
                 print(f"Error adding plant: {e}")
 
-    def water_plant(self,
-                    desired_plant: str,
-                    add_water_lvl: int) -> None:
+    def water_plant(self, desired_plant: str, add_water_lvl: int) -> None:
         print("Opening watering system")
         try:
             plant_found = False
