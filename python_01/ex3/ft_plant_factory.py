@@ -5,19 +5,19 @@ def plant_created(name: str, height: int, span: int) -> None:
 
 
 class Plant:
-    def __init__(self, name, height, span):
+    def __init__(self, name: str, height: int, span: int) -> None:
         self.name = name
         self.height = height
         self.span = span
         plant_created(name, height, span)
 
-    def grow(self, length):
+    def grow(self, length) -> None:
         self.height += length
 
-    def age(self, days):
+    def age(self, days) -> None:
         self.span += days
 
-    def get_info(self):
+    def get_info(self) -> None:
         return ([self.height, self.span])
 
 
