@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
-def print_plant_info(self, name: str, height: int, age: int, other) -> None:
+def print_plant_info(self: "Plant", name: str, height: int, age: int,
+                     other: str) -> None:
     p_name = name.capitalize()
     class_name = self.__class__.__name__
     var = ""
@@ -19,7 +20,7 @@ class Plant:
 
 
 class Flower(Plant):
-    def __init__(self, name, height, age, color: str) -> None:
+    def __init__(self, name: str, height: int, age: int, color: str) -> None:
         super().__init__(name, height, age)
         self.color = color
         print_plant_info(self, name, height, age, color)
@@ -29,10 +30,10 @@ class Flower(Plant):
 
 
 class Tree(Plant):
-    def __init__(self, name, height, age, trunk_diameter: str) -> None:
+    def __init__(self, name: str, height: int, age: int, trunk: str) -> None:
         super().__init__(name, height, age)
-        self.trunk_diameter = trunk_diameter
-        print_plant_info(self, name, height, age, trunk_diameter)
+        self.trunk_diameter = int(trunk)
+        print_plant_info(self, name, height, age, trunk)
 
     def produce_shade(self) -> None:
         square = int(self.trunk_diameter * 1.56)
@@ -41,7 +42,8 @@ class Tree(Plant):
 
 
 class Vegetable(Plant):
-    def __init__(self, name, height, age, season: str, nutri: str) -> None:
+    def __init__(self, name: str, height: int, age: int,
+                 season: str, nutri: str) -> None:
         super().__init__(name, height, age)
         self.harvest_season = season
         self.nutritional_value = nutri
