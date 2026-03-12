@@ -15,7 +15,7 @@ class Plant:
 
 class FloweringPlant(Plant):
     def __init__(self, name: str, height: int, color: str,
-                 blooming=True) -> None:
+                 blooming: bool = True) -> None:
         super().__init__(name, height)
         self.flower_color = color
         self.blooming = blooming
@@ -106,7 +106,7 @@ class GardenManager:
         return height > 0
 
     @classmethod
-    def get_total_gardens(cls) -> int:
+    def get_total_gardens(cls: "GardenManager") -> int:
         return cls.total_gardens
 
 
