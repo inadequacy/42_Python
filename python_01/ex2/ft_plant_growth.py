@@ -1,18 +1,18 @@
 #!/usr/bin/env python3
 
 class Plant:
-    def __init__(self, name: str, height: int, span: int):
+    def __init__(self, name: str, height: int, span: int) -> None:
         self.name = name
         self.height = height
         self.span = span
 
-    def grow(self, length):
+    def grow(self, length: int) -> None:
         self.height += length
 
-    def age(self, days):
+    def age(self, days: int) -> None:
         self.span += days
 
-    def get_info(self):
+    def get_info(self) -> None:
         return [self.height, self.span]
 
 
