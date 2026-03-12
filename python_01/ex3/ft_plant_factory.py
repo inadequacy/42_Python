@@ -11,10 +11,10 @@ class Plant:
         self.span = span
         plant_created(name, height, span)
 
-    def grow(self, length) -> None:
+    def grow(self, length: int) -> None:
         self.height += length
 
-    def age(self, days) -> None:
+    def age(self, days: int) -> None:
         self.span += days
 
     def get_info(self) -> None:
