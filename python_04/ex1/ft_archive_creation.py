@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-
 def function() -> None:
     file_name = "new_discovery.txt"
     file = open(file_name, "w")
