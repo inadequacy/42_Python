@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 from abc import ABC, abstractmethod
-from typing import Any, Tuple
+from typing import Any, Tuple, typing
 
-
+## code from ex0
 class DataProcessor(ABC):
     def __init__(self) -> None:
         self.new_data: list[str] = []
@@ -81,59 +81,18 @@ class LogProcessor(DataProcessor):
         else:
             raise ValueError("Invalid data")
 
+## code from ex1
+class DataStream():
+    def register_processor(self, proc: DataProcessor) -> None:
+        pass
+    def process_stream(self, stream: list[typing.Any]) -> None:
+        pass
+    def print_processors_stats(self) -> None:
+        pass
+
 
 def function() -> None:
-    print("=== Code Nexus - Data Processor ===")
-
-    # Numeric
-    print("\nTesting Numeric Processor...")
-    np = NumericProcessor()
-    print(f"Trying to validate input '42': {np.validate(42)}")
-    print(f"Trying to validate input 'Hello': {np.validate('Hello')}")
-
-    print("Test invalid ingestion of string 'foo' without prior validation:")
-    try:
-        np.ingest("foo")  # type: ignore (intentional)
-    except Exception as e:
-        print(f"Got exception: {e}")
-
-    print("Processing data: [1, 2, 3, 4, 5]")
-    np.ingest([1, 2, 3, 4, 5])
-
-    print("Extracting 3 values...")
-    for i in range(3):
-        idx, val = np.output()
-        print(f"Numeric value {i}: {val}")
-
-    # Text
-    print("\nTesting Text Processor...")
-    tp = TextProcessor()
-    print(f"Trying to validate input '42': {tp.validate(42)}")
-
-    print("Processing data: ['Hello', 'Nexus', 'World']")
-    tp.ingest(["Hello", "Nexus", "World"])
-
-    print("Extracting 1 value...")
-    idx, val = tp.output()
-    print(f"Text value {idx}: {val}")
-
-    # Log
-    print("\nTesting Log Processor...")
-    lp = LogProcessor()
-    print(f"Trying to validate input 'Hello': {lp.validate('Hello')}")
-
-    logs = [
-        {"log_level": "NOTICE", "log_message": "Connection to server"},
-        {"log_level": "ERROR", "log_message": "Unauthorized access!!"},
-    ]
-
-    print(f"Processing data: {logs}")
-    lp.ingest(logs)
-
-    print("Extracting 2 values...")
-    for i in range(2):
-        idx, val = lp.output()
-        print(f"Log entry {i}: {val}")
+    pass
 
 
 if __name__ == "__main__":
