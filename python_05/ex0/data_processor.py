@@ -21,7 +21,7 @@ class DataProcessor(ABC):
         value = self.new_data.pop(0)
         return 0, value
 
-# corrected gotta do other two
+
 class NumericProcessor(DataProcessor):
     def validate(self, data: Any) -> bool:
         if isinstance(data, (int, float)):
@@ -64,14 +64,20 @@ class TextProcessor(DataProcessor):
 
 class LogProcessor(DataProcessor):
     def validate(self, data: Any) -> bool:
-        if isinstance(data, (dict, List[dict])):
+        if isinstance(data, dict):
             return True
+        elif isinstance(data, List):
+            return all(isinstance(x, dict) for x in data)
         else:
             return False
 
     def ingest(self, data: Any) -> None:
-        if isinstance(data, ({str: str}, List[str: str])):
-            self.new_data = str(data)
+        if self.validate(data):
+            if isinstance(data, List):
+                for x in data:
+                    self.new_data.append(str(x))
+            else:
+                self.new_data.append(str(data))
         else:
             raise Exception("Invalid data")
 
