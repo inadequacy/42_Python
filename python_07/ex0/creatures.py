@@ -25,6 +25,19 @@ class Pyrodan(Creature):
         return f"{self.name} uses Flamethrower."
 
 
+class CreatureFactory(ABC):
+    @abstractmethod
+    def create_base(self, base: class) -> None:
+        pass
+    
+    @abstractmethod
+    def create_evolved(self, evolved: class) -> None:
+        pass
+
+
+class FlameFactory(CreatureFactory):
+
+
 if __name__ == "__main__":
     Creature("Flameling", "Fire", self.attack("Ember"))
 
