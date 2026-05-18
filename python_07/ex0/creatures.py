@@ -42,6 +42,7 @@ class FlameFactory(CreatureFactory):
     def create_evolved(self, evolved: class) -> None:
         self.evolved = evolved
 
+
 class AquaFactory(CreatureFactory):
     def create_base(self, base: class) -> None:
         self.base = base
