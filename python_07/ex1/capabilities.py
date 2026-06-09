@@ -14,11 +14,11 @@ class TransformCapability(ABC):
 
     @abstractmethod
     def transform(self) -> str:
-        return
+        pass
 
     @abstractmethod
     def revert(self) -> str:
-        return
+        pass
 
 
 class Sproutling(Creature, HealCapability):
@@ -47,6 +47,8 @@ class Shiftling(Creature, TransformCapability):
             return f"{self.cr_name} attacks normally."
         elif self.form == "sharper":
             return f"{self.cr_name} performs a boosted strike!"
+        else:
+            return "wrong form."
 
     def transform(self) -> str:
         self.form = "sharper"
@@ -67,6 +69,8 @@ class Morphagon(Creature, TransformCapability):
             return f"{self.cr_name} attacks normally."
         elif self.form == "draconic":
             return f"{self.cr_name} unleashes a devastating morph strike!"
+        else:
+            return "wrong form."
 
     def transform(self) -> str:
         self.form = "draconic"
