@@ -1,6 +1,9 @@
-from ex1.capabilities import HealingCreatureFactory, TransformCreatureFactory
+from ex1 import capabilities
 
-heal_factory = HealingCreatureFactory
-transform_factory = TransformCreatureFactory
+heal_factory = capabilities.HealingCreatureFactory
+transform_factory = capabilities.TransformCreatureFactory
+heal_ability = capabilities.HealCapability
+transform_ability = capabilities.TransformCapability
 
-__all__ = ["heal_factory", "transform_factory"]
+__all__ = ["heal_factory", "transform_factory", "heal_ability",
+           "transform_ability"]
