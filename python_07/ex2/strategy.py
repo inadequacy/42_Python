@@ -34,7 +34,3 @@ class AggressiveStrategy(BattleStrategy):
             return True
         else:
             return False
-
-
-if __name__ == "__main__":
-    print(creature.__class__)
