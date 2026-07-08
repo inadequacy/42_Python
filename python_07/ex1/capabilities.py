@@ -4,7 +4,7 @@ from ex0.creatures import Creature, CreatureFactory
 
 class HealCapability(ABC):
     @abstractmethod
-    def heal(self, target) -> str:
+    def heal(self) -> str:
         pass
 
 
@@ -25,7 +25,7 @@ class Sproutling(Creature, HealCapability):
     def attack(self) -> str:
         return f"{self.cr_name} uses Vine Whip."
 
-    def heal(self, target) -> str:
+    def heal(self) -> str:
         return f"{self.cr_name} heals itself for a small amount."
 
 
@@ -33,7 +33,7 @@ class Bloomelle(Creature, HealCapability):
     def attack(self) -> str:
         return f"{self.cr_name} uses Petal Dance."
 
-    def heal(self, target) -> str:
+    def heal(self) -> str:
         return f"{self.cr_name} heals itself and others for a large amount."
 
 
@@ -82,16 +82,16 @@ class Morphagon(Creature, TransformCapability):
 
 
 class HealingCreatureFactory(CreatureFactory):
-    def create_base(self):
+    def create_base(self) -> Creature:
         return Sproutling("Sproutling", "Grass")
 
-    def create_evolved(self):
+    def create_evolved(self) -> Creature:
         return Bloomelle("Bloomelle", "Grass/Fairy")
 
 
 class TransformCreatureFactory(CreatureFactory):
-    def create_base(self):
+    def create_base(self) -> Creature:
         return Shiftling("Shiftling", "Normal")
 
-    def create_evolved(self):
+    def create_evolved(self) -> Creature:
         return Morphagon("Morphagon", "Normal/Dragon")
