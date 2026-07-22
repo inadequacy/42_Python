@@ -9,7 +9,7 @@ strength = strength_potion()
 gold = lead_to_gold()
 
 
-def heal():
+def heal() -> str:
     return healing_potion()
 
 
