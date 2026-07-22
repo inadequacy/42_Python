@@ -1,0 +1,8 @@
+#!/usr/bin/env python3
+from .recipes import lead_to_gold
+
+
+gold = lead_to_gold()
+
+
+__all__ = ["gold"]
