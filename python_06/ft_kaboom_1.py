@@ -7,4 +7,4 @@ if __name__ == "__main__":
         "Fantasy", "Earth, wind and fire"
     )
 
-    print(f"Testing record light spell: {result}")
+    print(f"Testing record dark spell: {result}")
