@@ -2,14 +2,15 @@ from abc import ABC, abstractmethod
 from ex0.creatures import Creature, CreatureFactory
 
 
-class HealCapability(ABC):
+class HealCapability(Creature, ABC):
     @abstractmethod
     def heal(self) -> str:
         pass
 
 
-class TransformCapability(ABC):
-    def __init__(self) -> None:
+class TransformCapability(Creature, ABC):
+    def __init__(self, cr_name: str, cr_type: str) -> None:
+        super().__init__(cr_name, cr_type)
         self.form = "normal"
 
     @abstractmethod
@@ -21,7 +22,7 @@ class TransformCapability(ABC):
         pass
 
 
-class Sproutling(Creature, HealCapability):
+class Sproutling(HealCapability):
     def attack(self) -> str:
         return f"{self.cr_name} uses Vine Whip."
 
@@ -29,7 +30,7 @@ class Sproutling(Creature, HealCapability):
         return f"{self.cr_name} heals itself for a small amount."
 
 
-class Bloomelle(Creature, HealCapability):
+class Bloomelle(HealCapability):
     def attack(self) -> str:
         return f"{self.cr_name} uses Petal Dance."
 
@@ -37,7 +38,7 @@ class Bloomelle(Creature, HealCapability):
         return f"{self.cr_name} heals itself and others for a large amount."
 
 
-class Shiftling(Creature, TransformCapability):
+class Shiftling(TransformCapability):
     def __init__(self, cr_name: str, cr_type: str) -> None:
         super().__init__(cr_name, cr_type)
         self.form = "normal"
@@ -59,7 +60,7 @@ class Shiftling(Creature, TransformCapability):
         return f"{self.cr_name} returns to normal."
 
 
-class Morphagon(Creature, TransformCapability):
+class Morphagon(TransformCapability):
     def __init__(self, cr_name: str, cr_type: str) -> None:
         super().__init__(cr_name, cr_type)
         self.form = "normal"

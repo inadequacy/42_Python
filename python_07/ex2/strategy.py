@@ -1,11 +1,12 @@
 from abc import ABC, abstractmethod
+from typing import Any
 from ex0 import creature
 from ex1 import heal_ability, transform_ability
 
 
 class BattleStrategy(ABC):
     @abstractmethod
-    def act(self, creature: creature) -> None:
+    def act(self, creature: Any) -> None:
         pass
 
     @abstractmethod
@@ -39,7 +40,7 @@ class NormalStrategy(BattleStrategy):
 
 
 class AggressiveStrategy(BattleStrategy):
-    def act(self, creature: creature) -> None:
+    def act(self, creature: transform_ability) -> None:
         if self.is_valid(creature):
             print(creature.transform())
             print(creature.attack())
@@ -55,7 +56,7 @@ class AggressiveStrategy(BattleStrategy):
 
 
 class DefensiveStrategy(BattleStrategy):
-    def act(self, creature: creature) -> None:
+    def act(self, creature: heal_ability) -> None:
         if self.is_valid(creature):
             print(creature.attack())
             print(creature.heal())
