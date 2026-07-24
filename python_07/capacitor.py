@@ -7,7 +7,7 @@ def test_factory(factory, fact_type: str):
     print(base.describe())
     print(base.attack())
     if fact_type == "healing":
-        print(base.heal("someone else"))
+        print(base.heal())
     if fact_type == "transform":
         print(base.transform())
         print(base.attack())
@@ -18,7 +18,7 @@ def test_factory(factory, fact_type: str):
     print(evolved.describe())
     print(evolved.attack())
     if fact_type == "healing":
-        print(evolved.heal("someone else"))
+        print(evolved.heal())
     if fact_type == "transform":
         print(evolved.transform())
         print(evolved.attack())
